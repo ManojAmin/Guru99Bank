@@ -1,0 +1,110 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "start_timestamp": "2023-04-04T13:01:06.110Z",
+        "before": [
+          {
+            "result": {
+              "duration": 5834361600,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.Guru99Bank.modules.DriverSetUpImpl.setUp()"
+            }
+          }
+        ],
+        "line": 3,
+        "name": "Verify user can add new customer",
+        "description": "",
+        "id": "add-new-customer;verify-user-can-add-new-customer",
+        "after": [
+          {
+            "result": {
+              "duration": 920200,
+              "status": "passed"
+            },
+            "match": {
+              "location": "com.Guru99Bank.modules.DriverSetUpImpl.teardown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 1923628400,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "loginto application and navigate to new customer page",
+            "match": {
+              "location": "com.Guru99Bank.modules.AddNewCustomer.loginto_application_and_navigate_to_new_customer_page()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 2800270800,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "enter customer details and submit",
+            "match": {
+              "location": "com.Guru99Bank.modules.AddNewCustomer.enter_customer_details_and_submit(io.cucumber.datatable.DataTable)"
+            },
+            "rows": [
+              {
+                "cells": [
+                  "Name",
+                  "Gender",
+                  "Address",
+                  "City",
+                  "State",
+                  "Mobile",
+                  "Pin",
+                  "Email",
+                  "Password"
+                ]
+              },
+              {
+                "cells": [
+                  "Manoj",
+                  "male",
+                  "Katapadi",
+                  "Udupi",
+                  "Karnataka",
+                  "98980678123",
+                  "574105",
+                  "manoj01@gmail.com",
+                  "1234"
+                ]
+              }
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 43588400,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "verify new customer created",
+            "match": {
+              "location": "com.Guru99Bank.modules.AddNewCustomer.verify_new_customer_created()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Add new customer",
+    "description": "",
+    "id": "add-new-customer",
+    "keyword": "Feature",
+    "uri": "file:src/test/resources/features/addNewCustomer.feature",
+    "tags": []
+  }
+]
