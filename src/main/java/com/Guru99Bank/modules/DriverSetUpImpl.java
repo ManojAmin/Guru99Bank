@@ -1,7 +1,10 @@
 package com.Guru99Bank.modules;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -39,15 +42,21 @@ public class DriverSetUpImpl extends DriverSetUp {
 	}
 	
 	@After
-	public void teardown(Scenario scenario) {		
+	public void teardown(Scenario scenario) throws IOException {		
 		
+		String path=System.getProperty("user.dir")+"/test-output/screenshots/";
 		if(scenario.isFailed())
 		{
 			TakesScreenshot ts = (TakesScreenshot) driveSetUp.driver;
 			byte[] src = ts.getScreenshotAs(OutputType.BYTES);
-			scenario.attach(src, "image/png", scenario.getName());
-			
-			
+		/*	File src = ts.getScreenshotAs(OutputType.FILE);
+		    byte[] fileContent = FileUtils.readFileToByteArray(src); */
+		    
+			if((new File(path)).exists())
+			{
+				FileUtils.cleanDirectory(new File(path));
+				scenario.attach(src, "image/png", scenario.getName());
+			}
 		}
 		
 		log.info("Close browser");
