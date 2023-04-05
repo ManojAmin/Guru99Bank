@@ -1,5 +1,6 @@
 Feature: Fund transfer from one account to another account
 
+@Smoke
 Scenario: To verify that user can transfer fund from one account tomanother account
 
 Given login to user account and navigate to fund transer screen

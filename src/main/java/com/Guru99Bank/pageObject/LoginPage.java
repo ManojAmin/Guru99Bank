@@ -7,8 +7,6 @@ import org.openqa.selenium.support.FindBy;
 import com.Guru99Bank.utils.ReadApplicationProperty;
 
 public class LoginPage extends ParentPageObject{
-
-	private ReadApplicationProperty applicatioProperty;
 	
 	@FindBy(name = "uid")
 	WebElement userIdTextBox;
@@ -21,16 +19,14 @@ public class LoginPage extends ParentPageObject{
 	
 	public LoginPage(WebDriver driver) {
 		super(driver);	
-		applicatioProperty=new ReadApplicationProperty();
 	}
 	
-	public void enterUSerNamePassword()
+	public void enterUserNameAndPassword(String userName,String password)
 	{
-		String userName=applicatioProperty.getUserName();
-		String password=applicatioProperty.getPassword();
+
 		log.debug("user name: "+userName+ " Password :"+password );
-		userIdTextBox.sendKeys(applicatioProperty.getUserName());
-		passwordTextBox.sendKeys(applicatioProperty.getPassword());
+		userIdTextBox.sendKeys(userName);
+		passwordTextBox.sendKeys(password);
 	}
 	
 	public HomePage clickOnLogin()

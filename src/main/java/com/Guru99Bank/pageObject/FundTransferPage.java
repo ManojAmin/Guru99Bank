@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class FundTransferPage extends ParentPageObject {
 
-	@FindBy(name = "payersaccount")
+	@FindBy(name = "payersaccount1")
 	WebElement payerAccountNoTextBox;
 	
 	@FindBy(name = "payeeaccount")
@@ -59,4 +59,5 @@ public class FundTransferPage extends ParentPageObject {
 	{
 		return fundTransferMessage.isDisplayed();
 	}
+	
 }

@@ -10,6 +10,12 @@ public class HomePage extends ParentPageObject{
 	WebElement newCustomerButton;
 	
 	
+	@FindBy(xpath = "//a[text()='New Account']")
+	WebElement newAccountButton;
+	
+	@FindBy(xpath = "//a[text()='Fund Transfer']")
+	WebElement fundTransferButton;
+	
 	public HomePage(WebDriver driver) {
 		super(driver);
 	}
@@ -18,5 +24,17 @@ public class HomePage extends ParentPageObject{
 	{
 		newCustomerButton.click();
 		return new AddNewCustomerPage(driver);
+	}	
+	
+	public AddNewAccountPage clickOnNewAccountOption()
+	{
+		newCustomerButton.click();
+		return new AddNewAccountPage(driver);
+	}
+	
+	public FundTransferPage clickOnFundTransferButton()
+	{
+		fundTransferButton.click();
+		return new FundTransferPage(driver);
 	}
 }
