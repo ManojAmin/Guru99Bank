@@ -6,6 +6,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
+import com.Guru99Bank.utils.ReadDataFromExcel;
+
 import io.cucumber.datatable.DataTable;
 
 public class AddNewCustomerPage extends ParentPageObject{
@@ -85,6 +87,23 @@ public class AddNewCustomerPage extends ParentPageObject{
 	public boolean GetRegistartionSuccessfullMessage()
 	{
 		return registrationSuccefullMessage.isDisplayed();
+	}
+	
+	public void enterNewCustomerDetailsFromExcel()
+	{
+		Map<String, String>  data=new ReadDataFromExcel().customerDetails();		
+		customerNameTextBoc.sendKeys(data.get("Name"));			
+		WebElement gender=((data.get("Gender")).equalsIgnoreCase("male"))?genderMaleRadioButton :genderFemaleRadioButton;
+		gender.click();		
+		selectDate();
+		addressTextField.sendKeys(data.get("Address"));
+		cityTestBox.sendKeys(data.get("City"));
+		stateTestBox.sendKeys(data.get("State"));
+		pinTestBox.sendKeys(data.get("Pin"));
+		mobileNoTestBox.sendKeys(data.get("Mobile"));
+		emailTestBox.sendKeys(data.get("Email"));
+		passwordTestBox.sendKeys(data.get("Password"));
+		
 	}
 
 }

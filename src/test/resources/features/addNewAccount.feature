@@ -1,5 +1,6 @@
 Feature: Adding new account
 
+#@Smoke
 Scenario: Verify that Manager can add new account
 
 Given login to appplication and navigate to new account page

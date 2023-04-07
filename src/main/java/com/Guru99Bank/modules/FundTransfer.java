@@ -25,7 +25,7 @@ public class FundTransfer extends DriverSetUp {
 	
 	@Given("login to user account and navigate to fund transer screen")
 	public void login_to_user_account_and_navigate_to_fund_transer_screen() {
-		login.enterUserNameAndPassword("77758", "1234");
+		login.enterUserNameAndPassword("77758", "1234!");
 		home=login.clickOnLogin();
 		log.info("Logged into user account to transfer fund");
 		fundTransfer=home.clickOnFundTransferButton();

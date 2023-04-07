@@ -1,6 +1,6 @@
 Feature: Add new customer
 
-#@Smoke
+@Smoke
 Scenario: Verify user can add new customer
 
 Given loginto application and navigate to new customer page

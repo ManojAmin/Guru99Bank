@@ -35,7 +35,8 @@ public class AddNewCustomer extends DriverSetUp {
 	
 	@When("enter customer details and submit")
 	public void enter_customer_details_and_submit(DataTable data) {			
-		addCustomer.enterNewCustomerDetails(data);
+		//addCustomer.enterNewCustomerDetails(data);
+		addCustomer.enterNewCustomerDetailsFromExcel();
 		log.info("Customer details are entered");
 		addCustomer.clickOnSubmit();
 		log.info("submitted new customer create request");
