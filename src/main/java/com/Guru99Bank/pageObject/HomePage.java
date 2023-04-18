@@ -7,8 +7,7 @@ import org.openqa.selenium.support.FindBy;
 public class HomePage extends ParentPageObject{
 
 	@FindBy(xpath = "//a[text()='New Customer']")
-	WebElement newCustomerButton;
-	
+	WebElement newCustomerButton;	
 	
 	@FindBy(xpath = "//a[text()='New Account']")
 	WebElement newAccountButton;
@@ -16,11 +15,14 @@ public class HomePage extends ParentPageObject{
 	@FindBy(xpath = "//a[text()='Fund Transfer']")
 	WebElement fundTransferButton;
 	
+	@FindBy(xpath = "//a[text()='Edit Customer']")
+	WebElement editCustomerButton;
+	
 	public HomePage(WebDriver driver) {
 		super(driver);
 	}
 	
-	public AddNewCustomerPage clickOnNewCustoomerOption()
+	public AddNewCustomerPage clickOnNewCustomerOption()
 	{
 		newCustomerButton.click();
 		return new AddNewCustomerPage(driver);
@@ -36,5 +38,12 @@ public class HomePage extends ParentPageObject{
 	{
 		fundTransferButton.click();
 		return new FundTransferPage(driver);
+	}
+	
+	
+	public EditCustomerPage clickOnEditCustomerOption()
+	{
+		editCustomerButton.click();
+		return new EditCustomerPage(driver);
 	}
 }

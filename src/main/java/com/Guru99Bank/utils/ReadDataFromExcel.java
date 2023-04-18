@@ -21,10 +21,11 @@ public class ReadDataFromExcel {
 	int totalColumns;
 	Row row;
 	Cell rowCell,columCell;
-	String key,vaule;
+	String key,value;
 	
-	Map<String,String> map=new HashMap<String,String>();  
+	Map<String,String> map=new HashMap<String,String>();
 	
+	Map<String,String> editCustomer=new HashMap<String,String>(); 
 	
 	
 	public ReadDataFromExcel() {
@@ -64,6 +65,32 @@ public class ReadDataFromExcel {
 			e.printStackTrace();
 		}
 		return map;
+	}
+	
+	public Map<String, String> editCustomerDetails()
+	{
+		sheet=book.getSheetAt(1);
+		totalRows=sheet.getLastRowNum();
+		for (int i = 0; i <=totalRows; i++) {
+			row=sheet.getRow(i);
+			rowCell=row.getCell(0);
+			columCell=row.getCell(1);
+			
+			key=rowCell.getStringCellValue();			
+			
+			if(columCell.getCellType()==CellType.STRING)
+			{
+				 value=columCell.getStringCellValue();
+			}
+			else
+			{
+				value=NumberToTextConverter.toText(columCell.getNumericCellValue());
+			}
+			
+			editCustomer.put(key, value);
+		}
+		
+		return editCustomer;
 	}
 
 }

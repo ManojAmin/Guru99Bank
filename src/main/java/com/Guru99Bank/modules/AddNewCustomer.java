@@ -30,7 +30,7 @@ public class AddNewCustomer extends DriverSetUp {
 		log.info("User name entered");
 		home=login.clickOnLogin();
 		log.info("logged into the application");
-		addCustomer=home.clickOnNewCustoomerOption();
+		addCustomer=home.clickOnNewCustomerOption();
 	}
 	
 	@When("enter customer details and submit")
